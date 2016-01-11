@@ -1,6 +1,6 @@
 //
 //  ViewController.h
-//  CircleViewAndColor
+//  CircleView
 //
 //  Created by yi on 16/1/11.
 //  Copyright © 2016年 yi. All rights reserved.
