@@ -20,6 +20,10 @@
 @property (nonatomic, assign) CGFloat startAngel;
 @property (nonatomic, assign) CGFloat endAngel;
 
+@property (nonatomic, strong) UIBezierPath *edgePath;
+@property (nonatomic, strong) NSMutableArray *pathArray;
+
+
 @end
 
 @implementation CircleView
@@ -27,6 +31,7 @@
 -(instancetype)initWithFrame:(CGRect)frame{
     self = [super initWithFrame:frame];
     if (self) {
+        _pathArray = [[NSMutableArray alloc] init];
         self.backgroundColor = [UIColor clearColor];
         [self setupDefault];
         
@@ -42,7 +47,7 @@
 //    _percentFont = [UIFont fontWithName:@"Arial"size:17];
     _allCount = 0.0;
     _startAngel = 0.0;
-    _percentColorArray = @[[UIColor redColor],[UIColor yellowColor],[UIColor greenColor],[UIColor grayColor]];    
+    _percentColorArray = @[[UIColor redColor],[UIColor yellowColor],[UIColor greenColor],[UIColor grayColor]];
 }
 
 - (void)setPercentArray:(NSArray *)percentArray
@@ -53,26 +58,38 @@
 
 -(void)drawCircle{
     
-    UIBezierPath *edgePath = [UIBezierPath bezierPath];
-    [edgePath addArcWithCenter:CGPointMake(self.frame.size.width*0.5, self.frame.size.height * 0.5) radius:(self.frame.size.width - self.lineWidth) / 2 - 10 startAngle:DEGREES_Default(0) endAngle:DEGREES_Default(360) clockwise:YES];
-    CAShapeLayer *edgeLayer = [CAShapeLayer layer];
-    edgeLayer.path = edgePath.CGPath;
-    edgeLayer.fillColor = [UIColor clearColor].CGColor;
-    edgeLayer.strokeColor = [[UIColor whiteColor] CGColor];
-    edgeLayer.lineWidth = 3;
-    edgeLayer.frame = CGRectMake(0, 0, self.frame.size.width, self.frame.size.height);
-    [self.layer addSublayer:edgeLayer];
-
+    if (_edgePath == nil) {
+        _edgePath = [UIBezierPath bezierPath];
+        [_edgePath addArcWithCenter:CGPointMake(self.frame.size.width*0.5, self.frame.size.height * 0.5) radius:(self.frame.size.width - 3*self.lineWidth) / 2 - 10 startAngle:DEGREES_Default(0) endAngle:DEGREES_Default(360) clockwise:YES];
+        CAShapeLayer *edgeLayer = [CAShapeLayer layer];
+        edgeLayer.path = _edgePath.CGPath;
+        edgeLayer.fillColor = [UIColor clearColor].CGColor;
+        edgeLayer.strokeColor = [[UIColor whiteColor] CGColor];
+        edgeLayer.lineWidth = 3;
+        edgeLayer.frame = CGRectMake(0, 0, self.frame.size.width, self.frame.size.height);
+        [self.layer addSublayer:edgeLayer];
+    }
     
+
+    _allCount = 0.0;
     for (id count in _percentArray) {
         _allCount += [count doubleValue];
     }
+    
+    for (int i =0 ; i<_pathArray.count; i++) {
+        CAShapeLayer *edgeLayer = _pathArray[i];
+        [edgeLayer removeFromSuperlayer];
+    }
+    [_pathArray removeAllObjects];
+    
+    
     for (int i=(int)_percentArray.count-1; i>=0; i--) {
         CGFloat percentCount = [_percentArray[i] doubleValue];
         UIBezierPath *edgePath = [UIBezierPath bezierPath];
         CGFloat endAngel = (_startAngel+(percentCount/_allCount)*360);
-        [edgePath addArcWithCenter:CGPointMake(self.frame.size.width*0.5, self.frame.size.height * 0.5) radius:self.frame.size.width * 0.5 startAngle:DEGREES_Default(_startAngel) endAngle:DEGREES_Default(endAngel) clockwise:YES];
+        [edgePath addArcWithCenter:CGPointMake(self.frame.size.width*0.5, self.frame.size.height * 0.5) radius:self.frame.size.width * 0.5-self.lineWidth startAngle:DEGREES_Default(_startAngel) endAngle:DEGREES_Default(endAngel) clockwise:YES];
         _startAngel = endAngel;
+
         CAShapeLayer *edgeLayer = [CAShapeLayer layer];
         edgeLayer.path = edgePath.CGPath;
         edgeLayer.fillColor = [UIColor clearColor].CGColor;
@@ -80,6 +97,7 @@
         edgeLayer.lineWidth = self.lineWidth;
         edgeLayer.frame = CGRectMake(0, 0, self.frame.size.width, self.frame.size.height);
         [self.layer addSublayer:edgeLayer];
+        [_pathArray addObject:edgeLayer];
     }
 }
 

@@ -14,9 +14,9 @@
 		194FE90E1C43A8F100F26538 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 194FE90C1C43A8F100F26538 /* LaunchScreen.storyboard */; };
 		194FE9191C43A8F100F26538 /* CircleViewAndColorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 194FE9181C43A8F100F26538 /* CircleViewAndColorTests.m */; };
 		194FE9241C43A8F100F26538 /* CircleViewAndColorUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 194FE9231C43A8F100F26538 /* CircleViewAndColorUITests.m */; };
-		194FE9341C43A91500F26538 /* CircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 194FE9331C43A91500F26538 /* CircleView.m */; };
 		194FE9391C43A92900F26538 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 194FE9361C43A92900F26538 /* ViewController.m */; };
 		194FE93A1C43A92900F26538 /* UIImage+GradientColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 194FE9381C43A92900F26538 /* UIImage+GradientColor.m */; };
+		19A18D891C4C7982005AE3E9 /* CircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 19A18D881C4C7982005AE3E9 /* CircleView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,12 +51,12 @@
 		194FE91F1C43A8F100F26538 /* CircleViewAndColorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CircleViewAndColorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		194FE9231C43A8F100F26538 /* CircleViewAndColorUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CircleViewAndColorUITests.m; sourceTree = "<group>"; };
 		194FE9251C43A8F100F26538 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		194FE9321C43A91500F26538 /* CircleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CircleView.h; sourceTree = "<group>"; };
-		194FE9331C43A91500F26538 /* CircleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CircleView.m; sourceTree = "<group>"; };
 		194FE9351C43A92900F26538 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		194FE9361C43A92900F26538 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		194FE9371C43A92900F26538 /* UIImage+GradientColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+GradientColor.h"; sourceTree = "<group>"; };
 		194FE9381C43A92900F26538 /* UIImage+GradientColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+GradientColor.m"; sourceTree = "<group>"; };
+		19A18D871C4C7982005AE3E9 /* CircleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CircleView.h; sourceTree = "<group>"; };
+		19A18D881C4C7982005AE3E9 /* CircleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CircleView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,8 +152,8 @@
 		194FE9311C43A91500F26538 /* CircleView */ = {
 			isa = PBXGroup;
 			children = (
-				194FE9321C43A91500F26538 /* CircleView.h */,
-				194FE9331C43A91500F26538 /* CircleView.m */,
+				19A18D871C4C7982005AE3E9 /* CircleView.h */,
+				19A18D881C4C7982005AE3E9 /* CircleView.m */,
 			);
 			path = CircleView;
 			sourceTree = "<group>";
@@ -288,8 +288,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				194FE9341C43A91500F26538 /* CircleView.m in Sources */,
 				194FE9031C43A8F100F26538 /* AppDelegate.m in Sources */,
+				19A18D891C4C7982005AE3E9 /* CircleView.m in Sources */,
 				194FE9391C43A92900F26538 /* ViewController.m in Sources */,
 				194FE9001C43A8F100F26538 /* main.m in Sources */,
 				194FE93A1C43A92900F26538 /* UIImage+GradientColor.m in Sources */,
@@ -520,6 +520,7 @@
 				194FE92A1C43A8F100F26538 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		194FE92B1C43A8F100F26538 /* Build configuration list for PBXNativeTarget "CircleViewAndColorTests" */ = {
 			isa = XCConfigurationList;
@@ -528,6 +529,7 @@
 				194FE92D1C43A8F100F26538 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		194FE92E1C43A8F100F26538 /* Build configuration list for PBXNativeTarget "CircleViewAndColorUITests" */ = {
 			isa = XCConfigurationList;
@@ -536,6 +538,7 @@
 				194FE9301C43A8F100F26538 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
