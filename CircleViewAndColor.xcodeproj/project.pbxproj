@@ -14,9 +14,9 @@
 		194FE90E1C43A8F100F26538 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 194FE90C1C43A8F100F26538 /* LaunchScreen.storyboard */; };
 		194FE9191C43A8F100F26538 /* CircleViewAndColorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 194FE9181C43A8F100F26538 /* CircleViewAndColorTests.m */; };
 		194FE9241C43A8F100F26538 /* CircleViewAndColorUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 194FE9231C43A8F100F26538 /* CircleViewAndColorUITests.m */; };
-		194FE9391C43A92900F26538 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 194FE9361C43A92900F26538 /* ViewController.m */; };
 		194FE93A1C43A92900F26538 /* UIImage+GradientColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 194FE9381C43A92900F26538 /* UIImage+GradientColor.m */; };
-		19A18D891C4C7982005AE3E9 /* CircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 19A18D881C4C7982005AE3E9 /* CircleView.m */; };
+		19E698A11C76B74600B33A44 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19E698A01C76B74600B33A44 /* ViewController.m */; };
+		19E698A51C76B75100B33A44 /* CircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 19E698A41C76B75100B33A44 /* CircleView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,12 +51,12 @@
 		194FE91F1C43A8F100F26538 /* CircleViewAndColorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CircleViewAndColorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		194FE9231C43A8F100F26538 /* CircleViewAndColorUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CircleViewAndColorUITests.m; sourceTree = "<group>"; };
 		194FE9251C43A8F100F26538 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		194FE9351C43A92900F26538 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		194FE9361C43A92900F26538 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		194FE9371C43A92900F26538 /* UIImage+GradientColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+GradientColor.h"; sourceTree = "<group>"; };
 		194FE9381C43A92900F26538 /* UIImage+GradientColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+GradientColor.m"; sourceTree = "<group>"; };
-		19A18D871C4C7982005AE3E9 /* CircleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CircleView.h; sourceTree = "<group>"; };
-		19A18D881C4C7982005AE3E9 /* CircleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CircleView.m; sourceTree = "<group>"; };
+		19E6989F1C76B74600B33A44 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		19E698A01C76B74600B33A44 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		19E698A31C76B75100B33A44 /* CircleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CircleView.h; sourceTree = "<group>"; };
+		19E698A41C76B75100B33A44 /* CircleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CircleView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,11 +107,11 @@
 		194FE8FD1C43A8F100F26538 /* CircleViewAndColor */ = {
 			isa = PBXGroup;
 			children = (
-				194FE9311C43A91500F26538 /* CircleView */,
+				19E698A21C76B75100B33A44 /* CircleView */,
 				194FE9011C43A8F100F26538 /* AppDelegate.h */,
 				194FE9021C43A8F100F26538 /* AppDelegate.m */,
-				194FE9351C43A92900F26538 /* ViewController.h */,
-				194FE9361C43A92900F26538 /* ViewController.m */,
+				19E6989F1C76B74600B33A44 /* ViewController.h */,
+				19E698A01C76B74600B33A44 /* ViewController.m */,
 				194FE9371C43A92900F26538 /* UIImage+GradientColor.h */,
 				194FE9381C43A92900F26538 /* UIImage+GradientColor.m */,
 				194FE9071C43A8F100F26538 /* Main.storyboard */,
@@ -149,11 +149,11 @@
 			path = CircleViewAndColorUITests;
 			sourceTree = "<group>";
 		};
-		194FE9311C43A91500F26538 /* CircleView */ = {
+		19E698A21C76B75100B33A44 /* CircleView */ = {
 			isa = PBXGroup;
 			children = (
-				19A18D871C4C7982005AE3E9 /* CircleView.h */,
-				19A18D881C4C7982005AE3E9 /* CircleView.m */,
+				19E698A31C76B75100B33A44 /* CircleView.h */,
+				19E698A41C76B75100B33A44 /* CircleView.m */,
 			);
 			path = CircleView;
 			sourceTree = "<group>";
@@ -289,9 +289,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				194FE9031C43A8F100F26538 /* AppDelegate.m in Sources */,
-				19A18D891C4C7982005AE3E9 /* CircleView.m in Sources */,
-				194FE9391C43A92900F26538 /* ViewController.m in Sources */,
+				19E698A51C76B75100B33A44 /* CircleView.m in Sources */,
 				194FE9001C43A8F100F26538 /* main.m in Sources */,
+				19E698A11C76B74600B33A44 /* ViewController.m in Sources */,
 				194FE93A1C43A92900F26538 /* UIImage+GradientColor.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

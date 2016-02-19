@@ -7,8 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-
-
 @interface CircleView : UIView
 
 @property (nonatomic, assign) CGFloat lineWidth;
@@ -16,5 +14,6 @@
 @property (nonatomic, strong) NSArray *percentArray;
 @property (nonatomic, strong) NSArray *percentColorArray;
 
+@property (nonatomic, copy) NSString *percentString;
 
 @end

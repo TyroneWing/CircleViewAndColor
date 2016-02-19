@@ -48,6 +48,7 @@
     _allCount = 0.0;
     _startAngel = 0.0;
     _percentColorArray = @[[UIColor redColor],[UIColor yellowColor],[UIColor greenColor],[UIColor grayColor]];
+    _percentString = @"";
 }
 
 - (void)setPercentArray:(NSArray *)percentArray
@@ -60,7 +61,7 @@
     
     if (_edgePath == nil) {
         _edgePath = [UIBezierPath bezierPath];
-        [_edgePath addArcWithCenter:CGPointMake(self.frame.size.width*0.5, self.frame.size.height * 0.5) radius:(self.frame.size.width - 3*self.lineWidth) / 2 - 10 startAngle:DEGREES_Default(0) endAngle:DEGREES_Default(360) clockwise:YES];
+        [_edgePath addArcWithCenter:CGPointMake(self.frame.size.width*0.5, self.frame.size.height * 0.5) radius:(self.frame.size.width - self.lineWidth) / 2 - 20 startAngle:DEGREES_Default(0) endAngle:DEGREES_Default(360) clockwise:YES];
         CAShapeLayer *edgeLayer = [CAShapeLayer layer];
         edgeLayer.path = _edgePath.CGPath;
         edgeLayer.fillColor = [UIColor clearColor].CGColor;
@@ -87,7 +88,7 @@
         CGFloat percentCount = [_percentArray[i] doubleValue];
         UIBezierPath *edgePath = [UIBezierPath bezierPath];
         CGFloat endAngel = (_startAngel+(percentCount/_allCount)*360);
-        [edgePath addArcWithCenter:CGPointMake(self.frame.size.width*0.5, self.frame.size.height * 0.5) radius:self.frame.size.width * 0.5-self.lineWidth startAngle:DEGREES_Default(_startAngel) endAngle:DEGREES_Default(endAngel) clockwise:YES];
+        [edgePath addArcWithCenter:CGPointMake(self.frame.size.width*0.5, self.frame.size.height * 0.5) radius:self.frame.size.width * 0.5 startAngle:DEGREES_Default(_startAngel) endAngle:DEGREES_Default(endAngel) clockwise:YES];
         _startAngel = endAngel;
 
         CAShapeLayer *edgeLayer = [CAShapeLayer layer];
@@ -107,6 +108,20 @@
     self.backgroundColor = [UIColor clearColor];
     
     [self drawCircle];
+    
+    if (_percentString.length > 4) {
+        //百分比文字
+        UIFont *percntfont = [UIFont fontWithName:@"Helvetica" size:15];
+        UIColor *percntColor =  [UIColor whiteColor];
+        NSDictionary *percntstringAttrs = @{ NSFontAttributeName : percntfont, NSForegroundColorAttributeName : percntColor};
+        NSMutableAttributedString *percntAttrStr = [[NSMutableAttributedString alloc] initWithString:_percentString attributes:percntstringAttrs];
+        [percntAttrStr addAttribute:NSFontAttributeName
+                        value:[UIFont systemFontOfSize:28.0f]
+                        range:NSMakeRange(0, _percentString.length - 4)];
+        CGSize percntWidth = [_percentString sizeWithAttributes:percntstringAttrs];
+        [percntAttrStr drawAtPoint:CGPointMake(self.bounds.size.width/2 - percntWidth.width / 2.0,  (self.bounds.size.height/2-percntWidth.height/2-10))];
+    }
+    
     
     
 }
